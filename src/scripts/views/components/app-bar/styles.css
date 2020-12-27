@@ -1,6 +1,6 @@
 .app-bar {
   position: sticky;
-  z-index: 99;
+  z-index: 999;
   display: grid;
   grid-template-columns: 1fr auto;
   width: 100%;

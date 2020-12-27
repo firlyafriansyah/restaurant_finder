@@ -1,4 +1,5 @@
 import "./styles.css";
+import "./responsive.css";
 
 class AppBar extends HTMLElement {
   connectedCallback() {
@@ -14,14 +15,14 @@ class AppBar extends HTMLElement {
         <div class="app-bar__menu">
           <button id="hamburgerButton">☰</button>
         </div>
+        <nav id="navigationDrawer" class="app-bar__navigation">
+          <ul>
+            <li><a href="#/home">Home</a></li>
+            <li><a href="#/best-restaurant">Best Restaurant</a></li>
+            <li><a href="#/your-favorite">Your Favorite</a></li>
+          </ul>
+        </nav>    
       </header>
-      <nav id="navigationDrawer" class="app-bar__navigation">
-        <ul>
-          <li><a href="#/home">Home</a></li>
-          <li><a href="#/best-restaurant">Best Restaurant</a></li>
-          <li><a href="#/your-favorite">Your Favorite</a></li>
-        </ul>
-      </nav>    
       `;
   }
 }

@@ -9,3 +9,7 @@
 body {
   font-family: "Fjalla One", sans-serif;
 }
+
+#content {
+  min-height: 100vh;
+}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Fjalla+One&display=swap&family=Niconne&display=swap&Lobster&display=swap');
 
 * {
   margin: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: "Fjalla One", sans-serif;
+  font-family: "Lobster", cursive;
 }
 
 #content {

@@ -1,0 +1,21 @@
+.content_wrapper {
+  padding-top: 40px;
+  text-align: center;
+}
+.content_title {
+  font-family: "Cookie", cursive;
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+.description {
+  font-family: 'Niconne', cursive;
+  font-size: 1.5em;
+  margin: 0px 20px;
+}
+#top_restaurant {
+  background-color: white;
+  padding-bottom: 40px;
+}
+#list_restaurant {
+  background-color: #f1f1f1;
+}

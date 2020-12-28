@@ -1,0 +1,22 @@
+.intro {
+  text-align: center;
+  margin: 0px 40px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.welcome {
+  font-family: 'Cookie', cursive;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+.message {
+  font-family: 'Niconne', cursive;
+  color: rgb(54, 54, 54);
+  font-size: 1.5em;
+  margin: 20px auto;
+  width: 90%;
+}
+.speaker, .speaker_dept {
+  font-family: "Lora", serif;
+  font-size: 1.3em;
+}

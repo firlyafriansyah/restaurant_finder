@@ -10,6 +10,7 @@
 .error_wrapper h1 {
   color: rgb(85, 85, 85);
   margin: 20px 0px;
+  font-family: "Fjalla", sans-serif;
 }
 
 .error_image {

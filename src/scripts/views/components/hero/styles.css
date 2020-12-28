@@ -28,4 +28,11 @@
   color: white;
   font-weight: bold;
   margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+@media screen and (min-width: 950px) {
+  .hero__description {
+      top: 220px;
+  }
 }

@@ -53,3 +53,27 @@
   color: white;
   padding: 20px;
 }
+
+@media screen and (min-width: 800px) {
+  .app-bar {
+    grid-template-columns: 1fr auto auto;
+  }
+  .app-bar__menu button {
+    display: none;
+  }
+  .app-bar__navigation {
+    position: static;
+    display: flex;
+    align-items: center;
+    box-shadow: none;
+  }
+  .app-bar__navigation ul li {
+    display: inline;
+    position: flex;
+    align-items: center;
+  }
+  .app-bar__navigation ul li a {
+    width: auto;
+    display: inline;
+  }
+}

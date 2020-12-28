@@ -1,5 +1,4 @@
 import "./styles.css";
-import "./responsive.css";
 
 class AppBar extends HTMLElement {
   connectedCallback() {

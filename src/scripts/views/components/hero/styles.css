@@ -1,0 +1,31 @@
+.hero {
+  margin-bottom: 40px;
+}
+.hero__background {
+  background-image: url("../../../../public/images/hero-image_4.jpg");
+  width: 100%;
+  min-height: 380px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+.hero__description{
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 80%;
+  text-align: center;
+}
+.hero__description h1 {
+  line-height: 1.5;
+  padding: 15px;
+  background-color: rgba(0,0,0, 0.7);
+  border: 3px solid #f1f1f1;
+  font-size: 1.8em;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+}

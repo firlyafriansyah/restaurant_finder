@@ -1,8 +1,15 @@
+import RestaurantList from "../../../data/restaurant-source";
+
 const Home = {
   async render() {
     return `
-      <h1>Hello</h1>
+      <hero-elm></hero-elm>
     `;
+  },
+
+  async afterRender() {
+    const restaurant = await RestaurantList.allRestaurantList();
+    console.log(restaurant);
   },
 };
 

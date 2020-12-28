@@ -1,0 +1,12 @@
+@media screen and (min-width: 950px) {
+  .card_wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1450px) {
+  .card_wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+  }
+}

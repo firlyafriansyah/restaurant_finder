@@ -1,5 +1,5 @@
 .app-bar {
-  position: sticky;
+  position: fixed;
   z-index: 999;
   display: grid;
   grid-template-columns: 1fr auto;

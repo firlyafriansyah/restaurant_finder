@@ -17,7 +17,7 @@ class AppBar extends HTMLElement {
         <nav id="navigationDrawer" class="app-bar__navigation">
           <ul>
             <li><a href="#/home">Home</a></li>
-            <li><a href="#/best-restaurant">Best Restaurant</a></li>
+            <li><a href="#/list-restaurant">List Restaurant</a></li>
             <li><a href="#/your-favorite">Your Favorite</a></li>
           </ul>
         </nav>    

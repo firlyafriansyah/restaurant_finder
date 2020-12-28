@@ -4,7 +4,10 @@ class RestaurantList {
   static async allRestaurantList() {
     const response = await fetch(API_ENDPOINT.RESTO_LIST);
     const responseJson = await response.json();
-    return responseJson;
+    const sortedRestaurant = await responseJson.restaurants.sort(
+      (a, b) => b.rating - a.rating
+    );
+    return sortedRestaurant;
   }
 }
 

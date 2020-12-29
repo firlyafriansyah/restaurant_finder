@@ -1,5 +1,5 @@
 import Home from "../pages/home/index";
-import BestResto from "../pages/best/index";
+import RestaurantList from "../pages/list/index";
 import YourFavorite from "../pages/favorite/index";
 
-export { Home, BestResto, YourFavorite };
+export { Home, RestaurantList, YourFavorite };

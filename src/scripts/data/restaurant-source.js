@@ -1,6 +1,6 @@
 import API_ENDPOINT from "../global/end-point";
 
-class RestaurantList {
+class RestaurantData {
   static async allRestaurantList() {
     const response = await fetch(API_ENDPOINT.RESTO_LIST);
     const responseJson = await response.json();
@@ -9,6 +9,11 @@ class RestaurantList {
     );
     return sortedRestaurant;
   }
+
+  static async detailRestaurant(id) {
+    const response = await fetch(API_ENDPOINT.DETAIL(id));
+    return response.json();
+  }
 }
 
-export default RestaurantList;
+export default RestaurantData;

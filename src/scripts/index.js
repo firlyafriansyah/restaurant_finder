@@ -1,7 +1,7 @@
 require("./views/components/index");
 import "regenerator-runtime";
 import "../styles/styles.css";
-// import "../styles/responsive.css";
+import "../styles/responsive.css";
 import App from "./views/app";
 
 const app = new App({
@@ -11,7 +11,9 @@ const app = new App({
 });
 
 window.addEventListener("hashchange", () => {
-  app.renderPage();
+  if (window.location.hash !== "#menu") {
+    app.renderPage();
+  }
 });
 
 window.addEventListener("load", () => {

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Fjalla+One&display=swap&family=Niconne&display=swap&Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Fjalla+One&display=swap&family=Niconne&display=swap&Lobster&display=swap&Lobster&display=swap');
 
 * {
   margin: 0;
@@ -12,4 +12,340 @@ body {
 
 #content {
   min-height: 100vh;
+}
+
+.gap {
+  height: 80px;
+}
+
+/* CARDS */
+.card {
+  background-color: white;
+    position: relative;
+    overflow: hidden;
+    margin: 30px auto;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    padding-bottom: 20px;
+    box-shadow: 0px 0px 10px rgb(61, 61, 61);
+    border-radius: 5px;
+}
+.card_image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px 5px 0px 0px;
+}
+.information {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.location, .rating {
+  margin-top: 10px;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+.loc, .location p {
+    color: #d63031;
+}
+.star {
+    color: #fbc531;
+    margin-right: 5px;
+}
+.restaurant_name {
+    margin-top: 10px;
+    font-family: "Cookie", cursive;
+    font-size: 2.5em;
+}
+.restaurant_desc {
+    overflow: hidden;
+    display: -webkit-box;
+   -webkit-line-clamp: 5;
+   -webkit-box-orient: vertical;
+   font-size: 1.2em;
+    margin: 10px 30px;
+}
+.background-favorite {
+  transform: rotate(45deg);
+  position: absolute;
+  top: 10px;
+  right: -40px;
+  width: 150px;
+  height: 50px;
+  background-color: #485460;
+  box-shadow: 0px 4px 10px rgb(0, 0, 0);
+}
+.favorite-wrapper {
+  border-radius: 0px 0px 0px 10px;
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.favorite-wrapper button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.favorite-wrapper span {
+  font-size: 44px;
+  color: #fd79a6;
+}
+
+.detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.detail {
+  width: 60%;
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  padding: 10px 40px;
+  font-family: "Cookie", cursive;
+  font-size: 24px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 2px rgb(75, 75, 75);
+  outline: none;
+}
+.detail:active {
+  box-shadow: none;
+}
+
+/* Detail */
+.detail-wrapper {
+  width: 100%;
+}
+
+/* Restaurant Identity */
+.restaurant-identity {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  width: 100%;
+  height: 270px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.restaurant-name_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  text-align: center;
+}
+.restaurant-name {
+  font-family: "Lobster", cursive;
+  font-weight: bold;
+  text-align: center;
+  display: inline;
+  color: white;
+  text-decoration: underline;
+}
+.restaurant-category {
+  color: white;
+}
+
+.location-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 40px;
+}
+.location-wrapper span {
+  display: inline-block;
+  color: white;
+  margin-right: 5px;
+}
+.location {
+  display: inline;
+  color: white;
+  font-weight: 200;
+  margin: 0;
+}
+
+/* Information Detail */
+.information-detail {
+  display: grid;
+  align-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  height: 60px;
+  background-color: black;
+}
+.rating-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid white;
+}
+.rating-detail span {
+  font-size: 28px;
+  color: yellow;
+  margin-right: 10px;
+}
+.rating-detail p {
+  font-size: 28px;
+  font-family: "Fjalla One", sans-serif;
+  color: white;
+}
+.favorite-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.favorite-detail span {
+  font-size: 38px;
+  color: #fd79a6;
+}
+
+/* Detail Description */
+.detail-description {
+  padding: 60px;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+/* Menu */
+
+.detail-title {
+  margin: 20px 0px 0px;
+}
+
+.restaurant-menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+.foods-menu {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+.drinks-menu {
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+.foods, .drinks {
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+.foods-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: 5px;
+}
+.icon-food-list {
+  width: 40px;
+  height: 40px;
+  background-image: url("../public/icons/menus.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 20px;
+}
+.food-name {
+  line-height: 40px;
+  font-size: 24px;
+  font-family: "Lobster", cursive;
+}
+
+/* Card Review */
+.reviews-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+.card-review {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #d1ca98;
+  margin: 20px 40px;
+}
+.card-review:hover {
+  transform: translateY(-5px);
+  transition: all 0.2s;
+}
+.identity-review {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+.review-avatar {
+  width: 70px;
+  height: 60px;
+  background-image: url("../public//icons/avatar.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 20px;
+}
+.review-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Add review */
+.add-review {
+  width: 80%;
+  margin: 20px;
+}
+.review-title {
+  margin-bottom: 20px;
+}
+.label {
+  display: block;
+  margin-bottom: 10px;
+}
+.input-name {
+  padding: 0px 10px;
+  height: 30px;
+}
+.input-review {
+  height: 120px;
+  padding: 10px;
+}
+.input {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+.submit {
+  background-color: black;
+  color: white;
+  padding: 6px 20px;
+  border: 3px solid black;
+  border-radius: 5px;
+  font-family: "Cookie", cursive;
+  font-size: 24px;
+  box-shadow: 0px 0px 5px rgb(68, 68, 68);
+  outline: none;
+  margin-bottom: 20px;
+}
+.submit:active {
+  background-color: white;
+  color: black;
+  transform: translateY(3px);
+  transition: all 0.2s;
 }

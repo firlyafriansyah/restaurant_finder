@@ -12,6 +12,14 @@ const FavButtonInitiator = {
     await this._renderButton();
   },
 
+  async onlyShowButton({ favButtonContainer, id }) {
+    if (await this._isMoviesExist(id)) {
+      favButtonContainer.innerHTML = favoriteButtonTemplate();
+    } else {
+      favButtonContainer.innerHTML = favoritedButtonTemplate();
+    }
+  },
+
   async _renderButton() {
     const { id } = this._restaurant;
 
@@ -32,7 +40,6 @@ const FavButtonInitiator = {
 
     const favButton = document.querySelector(".favorite");
     favButton.addEventListener("click", async () => {
-      console.log(this._restaurant);
       await FavoriteRestaurantDb.putMovie(this._restaurant);
       this._renderButton();
     });

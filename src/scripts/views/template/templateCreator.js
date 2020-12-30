@@ -5,7 +5,7 @@ const cardTemplate = (restaurant) => `
   <div class="card" >
     <img class="card_image" src="${CONFIG.PICTURE_URL}${restaurant.pictureId}" alt="Foto list restaurant.">
     <div class="background-favorite"></div>
-    <div class="favorite-wrapper"></div>
+    <div class="favorite-wrapper" id="${restaurant.id}"></div>
     <div class="information">
       <div class="location">
         <span class="material-icons loc">location_on</span>
@@ -47,9 +47,7 @@ const restaurantDetailTemplate = (restaurant) => `
         <span class="material-icons">grade</span>
         <p>${restaurant.rating}</p>
       </div>
-      <div class="favorite-detail">
-        <span class="material-icons">favorite</span>
-      </div>
+      <div class="favorite-detail"></div>
     </div>
     <div class="detail-description">
       <p>${restaurant.description}</p>
@@ -90,14 +88,14 @@ const restaurantDetailTemplate = (restaurant) => `
   </div>
 `;
 
-const favoriteButtonTemplate = () => `
-  <button aria-label="like this restaurant" id="favButton" class="favorite">
+const favoriteButtonTemplate = (id) => `
+  <button aria-label="like this restaurant" class="favorite">
     <span class="material-icons">favorite_border</span>
   </button>  
 `;
 
-const favoritedButtonTemplate = () => `
-  <button aria-label="like this restaurant" id="favButton" class="favorite">
+const favoritedButtonTemplate = (id) => `
+  <button aria-label="like this restaurant" class="favorite">
     <span class="material-icons">favorite</span>
   </button>
 `;

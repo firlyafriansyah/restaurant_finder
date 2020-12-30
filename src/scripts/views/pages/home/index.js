@@ -1,9 +1,6 @@
 import RestaurantData from "../../../data/restaurant-source";
 import FavButtonInitiator from "../../../utils/fav-button-initiator";
-import {
-  cardTemplate,
-  favoritedButtonTemplate,
-} from "../../template/templateCreator";
+import { cardTemplate } from "../../template/templateCreator";
 import "./styles.css";
 
 const Home = {
@@ -23,7 +20,7 @@ const Home = {
 
   async afterRender() {
     let counter = 0;
-    const restaurant = await RestaurantData.allRestaurantList();
+    const restaurant = await RestaurantData.bestRestaurant();
     const contianer = document.querySelector(".card_wrapper");
     restaurant.forEach((restaurant) => {
       if (counter < 8) {
@@ -31,25 +28,16 @@ const Home = {
       }
       counter++;
     });
-    const buttonContainer = document.querySelectorAll(".favorite-wrapper");
-    await this.favButtonImplementation(restaurant, buttonContainer);
+    this.showFavorite();
   },
 
-  async favButtonImplementation(restaurant, buttonContainer) {
-    let count = 0;
-    buttonContainer.forEach((contianer) => {
-      FavButtonInitiator.init({
-        favButtonContainer: contianer,
-        restaurant: {
-          id: restaurant[count].id,
-          name: restaurant[count].name,
-          city: restaurant[count].city,
-          description: restaurant[count].description,
-          pictureId: restaurant[count].pictureId,
-          rating: restaurant[count].rating,
-        },
+  showFavorite() {
+    const button = document.querySelectorAll(".favorite-wrapper");
+    button.forEach((btn) => {
+      FavButtonInitiator.onlyShowButton({
+        favButtonContainer: btn,
+        id: btn.id,
       });
-      count++;
     });
   },
 };

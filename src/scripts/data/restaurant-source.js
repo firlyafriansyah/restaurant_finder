@@ -14,6 +14,11 @@ class RestaurantData {
     const response = await fetch(API_ENDPOINT.DETAIL(id));
     return response.json();
   }
+
+  static async bestRestaurant() {
+    const bestResto = await this.allRestaurantList();
+    return bestResto.slice(0, 3);
+  }
 }
 
 export default RestaurantData;

@@ -77,24 +77,22 @@ const restaurantDetailTemplate = (restaurant) => `
     </div>
     <div class="add-review">
         <h1 class="review-title">Add Your Review</h1>
-        <form>
           <label for="name" class="label">Nama :</label>
           <input type="text" id="name" class="input-name input" placeholder="Masukan Nama Kamu..." />
           <label for="review" class="label">Review :</label>
           <textarea id="review" class="input-review input" placeholder="Tulis review kamu disini..."></textarea>
-          <button class="submit" type="submit">Tambah Review</button>
-        </form>
+          <button class="submit">Tambah Review</button>
     </div.
   </div>
 `;
 
-const favoriteButtonTemplate = (id) => `
+const favoriteButtonTemplate = () => `
   <button aria-label="like this restaurant" class="favorite">
     <span class="material-icons">favorite_border</span>
   </button>  
 `;
 
-const favoritedButtonTemplate = (id) => `
+const favoritedButtonTemplate = () => `
   <button aria-label="like this restaurant" class="favorite">
     <span class="material-icons">favorite</span>
   </button>

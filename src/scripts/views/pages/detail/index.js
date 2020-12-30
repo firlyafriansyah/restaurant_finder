@@ -1,4 +1,5 @@
 import RestaurantData from "../../../data/restaurant-source";
+import CONFIG from "../../../global/config";
 import UrlParser from "../../../routes/urlParser";
 import FavButtonInitiator from "../../../utils/fav-button-initiator";
 import { restaurantDetailTemplate } from "../../template/templateCreator";
@@ -31,8 +32,26 @@ const Detail = {
     });
 
     const addReviewButton = document.querySelector(".submit");
-    addReviewButton.addEventListener("click", () => {
-      console.log("clicked");
+    const data = {
+      id: restaurantData.id,
+      name: "Ramos",
+      review: "Delicious!",
+    };
+    addReviewButton.addEventListener("click", async () => {
+      try {
+        const fetchResponse = await fetch(`${CONFIG.BASE_URL}review`, {
+          method: "POST",
+          headers: {
+            "X-Auth-Token": 12345,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        const response = await fetchResponse.json();
+        console.log(response);
+      } catch (e) {
+        console.log("Error:", e);
+      }
     });
   },
 };

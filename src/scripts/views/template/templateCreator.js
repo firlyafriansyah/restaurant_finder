@@ -71,9 +71,11 @@ const restaurantDetailTemplate = (restaurant) => `
         })}
       </div>
     </div>
-    <h1 class="detail-title">* Reviews *</h1>
-    <div class="reviews-wrapper">
-        ${detailInitiator.reviewsInitiator(restaurant)}
+    <div class="reviews">
+      <h1 class="detail-title">* Reviews *</h1>
+      <div class="reviews-wrapper">
+          ${detailInitiator.reviewsInitiator(restaurant)}
+      </div>
     </div>
     <div class="add-review">
         <h1 class="review-title">Add Your Review</h1>

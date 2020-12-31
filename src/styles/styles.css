@@ -317,6 +317,9 @@ body {
   background-repeat: no-repeat;
   margin-right: 20px;
 }
+.review-username {
+  text-transform: capitalize;
+}
 .review-body {
   display: flex;
   justify-content: center;

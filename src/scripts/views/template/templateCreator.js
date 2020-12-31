@@ -76,12 +76,14 @@ const restaurantDetailTemplate = (restaurant) => `
       </div>
     </div>
     <div class="add-review">
-        <h1 class="review-title">Add Your Review</h1>
-          <label for="name" class="label">Nama :</label>
-          <input type="text" id="name" class="input-name input" placeholder="Masukan Nama Kamu..." />
-          <label for="review" class="label">Review :</label>
-          <textarea id="review" class="input-review input" placeholder="Tulis review kamu disini..."></textarea>
-          <button class="submit">Tambah Review</button>
+      <h1 class="review-title">Add Your Review</h1>
+      <form>
+        <label for="name" class="label">Nama :</label>
+        <input type="text" id="name" class="input-name input" placeholder="Masukan Nama Kamu..." />
+        <label for="review" class="label">Review :</label>
+        <textarea id="review" class="input-review input" placeholder="Tulis review kamu disini..."></textarea>
+        <button class="submit" type="submit">Tambah Review</button>
+      </form>
     </div.
   </div>
 `;

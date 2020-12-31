@@ -17,7 +17,7 @@ class RestaurantData {
 
   static async bestRestaurant() {
     const bestResto = await this.allRestaurantList();
-    return bestResto.slice(0, 3);
+    return bestResto.slice(0, 8);
   }
 }
 

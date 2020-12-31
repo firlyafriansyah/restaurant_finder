@@ -4,6 +4,9 @@ const CONFIG = {
   DATABASE_NAME: "restaurant-finder-database",
   DATABASE_VERSION: 1,
   OBJECT_STORE_NAME: "restaurant",
+  POST_METHOD: "POST",
+  X_AUTH_TOKEN: 12345,
+  CONTENT_TYPE: "application/json",
 };
 
 export default CONFIG;

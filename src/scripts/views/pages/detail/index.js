@@ -7,15 +7,17 @@ import { restaurantDetailTemplate } from "../../template/templateCreator";
 const Detail = {
   async render() {
     return `
-      <div class="detail-content"></div>
+      <div class="detail-content">
+        <loader-elm></loader-elm>
+      </div>
     `;
   },
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await RestaurantData.detailRestaurant(url.id);
-    const restauarntContainer = document.querySelector(".detail-content");
-    restauarntContainer.innerHTML = restaurantDetailTemplate(
+    const restaurantContainer = document.querySelector(".detail-content");
+    restaurantContainer.innerHTML = restaurantDetailTemplate(
       restaurant.restaurant
     );
     const restaurantData = restaurant.restaurant;

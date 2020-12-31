@@ -3,6 +3,7 @@ import {
   favoriteButtonTemplate,
   favoritedButtonTemplate,
 } from "../views/template/templateCreator";
+import NotificationHelper from "./notification-helper";
 
 const FavButtonInitiator = {
   async init({ favButtonContainer, restaurant }) {
@@ -34,6 +35,12 @@ const FavButtonInitiator = {
     favButton.addEventListener("click", async () => {
       await FavoriteRestaurantDb.putMovie(this._restaurant);
       this._renderButton();
+      NotificationHelper.sendNotification({
+        title: `Add to Your Favorite Restaurant`,
+        options: {
+          body: `${this._restaurant.name} add to your favorite restaurant!`,
+        },
+      });
     });
   },
 
@@ -44,6 +51,12 @@ const FavButtonInitiator = {
     favButton.addEventListener("click", async () => {
       await FavoriteRestaurantDb.deleteRestaurant(this._restaurant.id);
       this._renderButton();
+      NotificationHelper.sendNotification({
+        title: `Removed from Your Favorite Restaurant`,
+        options: {
+          body: `${this._restaurant.name} has been removed from your favorite restaurant!`,
+        },
+      });
     });
   },
 };

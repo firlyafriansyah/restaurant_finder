@@ -1,6 +1,6 @@
 import {
   cardReviewTemplate,
-  foodListTemplate,
+  menuListTemplate,
 } from "../views/template/templateCreator";
 
 const detailInitiator = {
@@ -14,7 +14,7 @@ const detailInitiator = {
 
   menuInitiator({ restaurant, menuType }) {
     let menus;
-    let foodElements = "";
+    let menuElements = "";
 
     if (menuType === "foods") {
       menus = this._menuFoodsIterator(restaurant);
@@ -22,10 +22,10 @@ const detailInitiator = {
       menus = this._menuDrinksIterator(restaurant);
     }
 
-    menus.forEach((food) => {
-      foodElements += foodListTemplate(food);
+    menus.forEach((menu) => {
+      menuElements += menuListTemplate(menu);
     });
-    return foodElements;
+    return menuElements;
   },
 
   reviewsInitiator(restaurant) {

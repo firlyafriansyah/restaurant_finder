@@ -1,13 +1,13 @@
 import { cardTemplate } from "../../template/templateCreator";
 import "./styles.css";
-import FavButtonInitiator from "../../../utils/fav-button-initiator";
 import FavoriteRestaurantDb from "../../../data/favoriteRestaurant-source";
+import FavoriteIconInitiator from "../../../utils/favoriteIcon-initiator";
 
 const YourFavorite = {
   async render() {
     return `
       <div class="gap"></div>
-      <h1 class="favorite-restaurant_title">Your Favorite</h1>
+      <h1 class="favorite-restaurant_title" id="skip_content">Your Favorite</h1>
       <div class="card_wrapper"></div>
     `;
   },
@@ -15,21 +15,14 @@ const YourFavorite = {
   async afterRender() {
     const restaurant = await FavoriteRestaurantDb.getAllRestaurant();
     const container = document.querySelector(".card_wrapper");
+    if (restaurant.length <= 0) {
+      container.innerHTML = `<div class="favorite-empty"><h2>Anda belum mempunyai Restaurant Favorite</h2></div>`;
+    }
     restaurant.forEach((restaurant) => {
       container.innerHTML += cardTemplate(restaurant);
     });
 
-    this.showFavorite();
-  },
-
-  showFavorite() {
-    const button = document.querySelectorAll(".favorite-wrapper");
-    button.forEach((btn) => {
-      FavButtonInitiator.onlyShowButton({
-        favButtonContainer: btn,
-        id: btn.id,
-      });
-    });
+    FavoriteIconInitiator.init();
   },
 };
 

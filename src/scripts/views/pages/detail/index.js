@@ -1,7 +1,6 @@
 import RestaurantData from "../../../data/restaurant-source";
 import UrlParser from "../../../routes/urlParser";
 import addReviewInitiator from "../../../utils/addReview-initiator";
-import detailInitiator from "../../../utils/detail-initiator";
 import FavButtonInitiator from "../../../utils/fav-button-initiator";
 import { restaurantDetailTemplate } from "../../template/templateCreator";
 
@@ -28,7 +27,7 @@ const Detail = {
         city: restaurantData.city,
         rating: restaurantData.rating,
         pictureId: restaurantData.pictureId,
-        descriptiom: restaurantData.description,
+        description: restaurantData.description,
       },
     });
 

@@ -12,7 +12,7 @@ class AppBar extends HTMLElement {
           <h1>Restaurant Finder</h1>
         </div>
         <div class="app-bar__menu">
-          <button id="hamburgerButton">☰</button>
+          <button id="hamburgerButton" aria-label="toggle navigation">☰</button>
         </div>
         <nav id="navigationDrawer" class="app-bar__navigation">
           <ul>

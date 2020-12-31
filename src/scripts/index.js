@@ -3,6 +3,7 @@ import "regenerator-runtime";
 import "../styles/styles.css";
 import "../styles/responsive.css";
 import App from "./views/app";
+import serviceworkerRegister from "./utils/serviceWorker-register";
 
 const app = new App({
   button: document.querySelector("#hamburgerButton"),
@@ -11,11 +12,12 @@ const app = new App({
 });
 
 window.addEventListener("hashchange", () => {
-  if (window.location.hash !== "#menu") {
+  if (window.location.hash !== "#skip_content") {
     app.renderPage();
   }
 });
 
 window.addEventListener("load", () => {
   app.renderPage();
+  serviceworkerRegister();
 });

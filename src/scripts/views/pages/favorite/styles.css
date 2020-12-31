@@ -3,3 +3,18 @@
   text-align: center;
   font-size: 42px;
 }
+
+.favorite-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 60vh;
+}
+
+.favorite-empty h2 {
+  margin: 0px 20px;
+  text-align: center;
+  font-weight: 200;
+  color: #6e6e6e;
+}

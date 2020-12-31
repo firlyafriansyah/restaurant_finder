@@ -12,14 +12,6 @@ const FavButtonInitiator = {
     await this._renderButton();
   },
 
-  async onlyShowButton({ favButtonContainer, id }) {
-    if (await this._isMoviesExist(id)) {
-      favButtonContainer.innerHTML = favoriteButtonTemplate();
-    } else {
-      favButtonContainer.innerHTML = favoritedButtonTemplate();
-    }
-  },
-
   async _renderButton() {
     const { id } = this._restaurant;
 

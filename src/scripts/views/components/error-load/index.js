@@ -8,11 +8,11 @@ class Error extends HTMLElement {
   render() {
     this.innerHTML = `
       <div class="error_wrapper">
-        <h1>Content can't loaded</h1>
+        <h1>Sorry, Content can't loaded</h1>
         <div class="error_image">
           <div class="error_background-image"></div>
         </div>
-        <h1>Server Error :(</h1>
+        <h1>Page not found :(</h1>
       </div>
     `;
   }

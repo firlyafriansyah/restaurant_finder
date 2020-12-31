@@ -1,11 +1,14 @@
 import CONFIG from "../../global/config";
+import API_ENDPOINT from "../../global/end-point";
 import detailInitiator from "../../utils/detail-initiator";
 
 const cardTemplate = (restaurant) => `
   <div class="card" >
-    <img class="card_image" src="${CONFIG.PICTURE_URL}${restaurant.pictureId}" alt="Foto list restaurant.">
+    <img class="card_image" src="${API_ENDPOINT.PICTURE}${restaurant.pictureId}" alt="${restaurant.name}">
     <div class="background-favorite"></div>
-    <div class="favorite-wrapper" id="${restaurant.id}"></div>
+    <div class="favorite-wrapper" id="${restaurant.id}">
+      <span class="material-icons">favorite_border</span>
+    </div>
     <div class="information">
       <div class="location">
         <span class="material-icons loc">location_on</span>
@@ -28,18 +31,20 @@ const restaurantDetailTemplate = (restaurant) => `
   <div class="gap"></div>
   <div class="detail-wrapper">
     <div class="restaurant-identity" style="background-image: url('${
-      CONFIG.PICTURE_URL
+      API_ENDPOINT.PICTURE
     }${restaurant.pictureId}')">
       
       <div class="restaurant-name_wrapper">
-        <h1 class="restaurant-name">${restaurant.name}</h1>
-        <p class="restaurant-category">${detailInitiator.categoryInitiator(
+        <h1 class="restaurant-name" tabindex="0">${restaurant.name}</h1>
+        <p class="restaurant-category" tabindex="0">${detailInitiator.categoryInitiator(
           restaurant
         )}</p>
       </div>
       <div class="location-wrapper" >
         <span class="material-icons">location_on</span>
-        <p class="location">${restaurant.address}, ${restaurant.city}</p>
+        <p class="location" tabindex="0"  >${restaurant.address}, ${
+  restaurant.city
+}</p>
       </div>
     </div>
     <div class="information-detail">
@@ -52,17 +57,17 @@ const restaurantDetailTemplate = (restaurant) => `
     <div class="detail-description">
       <p>${restaurant.description}</p>
     </div>
-    <h1 class="detail-title"">* Menus *</h1>
+    <h1 class="detail-title" tabindex="0" id="skip_content">Menus</h1>
     <div class="restaurant-menu">
-      <div class="foods-menu" >
-        <h1 class="foods">.Foods</h1>
+      <div class="foods-menu">
+        <h1 class="foods" tabindex="0">.Foods</h1>
         ${detailInitiator.menuInitiator({
           restaurant: restaurant,
           menuType: "foods",
         })}
       </div>
       <div class="drinks-menu" >
-        <h1 class="drinks">.Drinks</h1>
+        <h1 class="drinks" tabindex="0">.Drinks</h1>
         ${detailInitiator.menuInitiator({
           restaurant: restaurant,
           menuType: "drink",
@@ -70,13 +75,13 @@ const restaurantDetailTemplate = (restaurant) => `
       </div>
     </div>
     <div class="reviews">
-      <h1 class="detail-title">* Reviews *</h1>
+      <h1 class="detail-title" tabindex="0">Reviews</h1>
       <div class="reviews-wrapper">
           ${detailInitiator.reviewsInitiator(restaurant)}
       </div>
     </div>
     <div class="add-review">
-      <h1 class="review-title">Add Your Review</h1>
+      <h1 class="review-title" tabindex="0">Add Your Review</h1>
       <form>
         <label for="name" class="label">Nama :</label>
         <input type="text" id="name" class="input-name input" placeholder="Masukan Nama Kamu..." />
@@ -95,15 +100,18 @@ const favoriteButtonTemplate = () => `
 `;
 
 const favoritedButtonTemplate = () => `
-  <button aria-label="like this restaurant" class="favorite">
+  <button aria-label="unlike this restaurant" class="favorite">
     <span class="material-icons">favorite</span>
   </button>
 `;
 
-const foodListTemplate = (foods) => `
+const favoritedIconTamplate = () =>
+  `<span class="material-icons">favorite</span>`;
+
+const menuListTemplate = (menu) => `
   <div class="foods-list">
     <div class="icon-food-list"></div>
-    <p class="food-name">${foods}</p>
+    <p class="food-name" tabindex="0">${menu}</p>
   </div>
 `;
 
@@ -112,12 +120,12 @@ const cardReviewTemplate = (review) => `
     <div class="identity-review">
       <div class="review-avatar"></div>
       <div class="review-user">
-        <h2 class="review-username">${review.name}</h2>
-        <p class="review-date">${review.date}</p>
+        <h2 class="review-username" tabindex="0">${review.name}</h2>
+        <p class="review-date" tabindex="0">${review.date}</p>
       </div>
     </div>
     <div class="review-body">
-      <p class="review-text">${review.review}</p>
+      <p class="review-text" tabindex="0">${review.review}</p>
     </div>
   </div>
 `;
@@ -127,6 +135,7 @@ export {
   favoriteButtonTemplate,
   favoritedButtonTemplate,
   restaurantDetailTemplate,
-  foodListTemplate,
+  menuListTemplate,
   cardReviewTemplate,
+  favoritedIconTamplate,
 };

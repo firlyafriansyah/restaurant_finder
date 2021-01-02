@@ -4,21 +4,28 @@ class RestaurantData {
   static async allRestaurantList() {
     const response = await fetch(API_ENDPOINT.RESTO_LIST);
     const responseJson = await response.json();
-    const sortedRestaurant = await responseJson.restaurants.sort(
+    const sortedRestaurant = await responseJson;
+    sortedRestaurant.restaurants = sortedRestaurant.restaurants.sort(
       (a, b) => b.rating - a.rating
     );
+    sortedRestaurant.restaurants.map((restaurants) => {
+      restaurants.pictureId = API_ENDPOINT.PICTURE + restaurants.pictureId;
+    });
     return sortedRestaurant;
   }
 
   static async detailRestaurant(id) {
     const response = await fetch(API_ENDPOINT.DETAIL(id));
     const responseJson = await response.json();
-    return responseJson;
+    const restaurant = responseJson.restaurant;
+    restaurant.pictureId = API_ENDPOINT.PICTURE + restaurant.pictureId;
+    return restaurant;
   }
 
   static async bestRestaurant() {
     const bestResto = await this.allRestaurantList();
-    return bestResto.slice(0, 8);
+    bestResto.restaurants = bestResto.restaurants.slice(0, 8);
+    return bestResto;
   }
 }
 

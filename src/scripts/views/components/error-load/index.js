@@ -12,7 +12,8 @@ class Error extends HTMLElement {
         <div class="error_image">
           <div class="error_background-image"></div>
         </div>
-        <h1>Page not found :(</h1>
+        <h1>Page not found</h1>
+        <h1>or Server error :(</h1>
       </div>
     `;
   }

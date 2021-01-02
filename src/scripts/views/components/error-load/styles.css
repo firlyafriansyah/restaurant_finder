@@ -1,15 +1,14 @@
 .error_wrapper {
-  width: 100%;
-  height: 80vh;
-  justify-content: center;
-  text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 60vh;
 }
 
 .error_wrapper h1 {
   color: rgb(85, 85, 85);
-  margin: 20px 0px;
   font-family: "Fjalla", sans-serif;
 }
 
@@ -18,6 +17,7 @@
   height: 40%;
   display: flex;
   justify-content: center;
+  margin: 20px 0px;
 }
 
 .error_background-image {

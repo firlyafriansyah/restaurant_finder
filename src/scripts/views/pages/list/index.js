@@ -15,13 +15,18 @@ const RestaurantList = {
   },
 
   async afterRender() {
-    const restaurant = await RestaurantData.allRestaurantList();
     const container = document.querySelector(".card_wrapper");
-    container.innerHTML = "";
-    restaurant.forEach((restaurant) => {
-      container.innerHTML += cardTemplate(restaurant);
-    });
-    FavoriteIconInitiator.init();
+    const responseRestaurant = await RestaurantData.allRestaurantList();
+    if (responseRestaurant.error) {
+      container.innerHTML = `<error-elm></error-elm>`;
+    } else {
+      const restaurant = responseRestaurant.restaurants;
+      container.innerHTML = "";
+      restaurant.forEach((restaurant) => {
+        container.innerHTML += cardTemplate(restaurant);
+      });
+      FavoriteIconInitiator.init();
+    }
   },
 };
 

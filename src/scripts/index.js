@@ -4,6 +4,7 @@ import "../styles/styles.css";
 import "../styles/responsive.css";
 import App from "./views/app";
 import serviceworkerRegister from "./utils/serviceWorker-register";
+import NotificationHelper from "./utils/notification-helper";
 
 const app = new App({
   button: document.querySelector("#hamburgerButton"),
@@ -20,4 +21,5 @@ window.addEventListener("hashchange", () => {
 window.addEventListener("load", () => {
   app.renderPage();
   serviceworkerRegister();
+  NotificationHelper._requestPermission();
 });

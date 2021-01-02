@@ -22,16 +22,21 @@ const Home = {
 
   async afterRender() {
     let counter = 0;
-    const restaurant = await RestaurantData.bestRestaurant();
-    const contianer = document.querySelector(".card_wrapper");
-    contianer.innerHTML = "";
-    restaurant.forEach((restaurant) => {
-      if (counter < 8) {
-        contianer.innerHTML += cardTemplate(restaurant);
-      }
-      counter++;
-    });
-    FavoriteIconInitiator.init();
+    const container = document.querySelector(".card_wrapper");
+    const responseRestaurant = await RestaurantData.bestRestaurant();
+    if (responseRestaurant.error) {
+      container.innerHTML = `<error-elm></error-elm>`;
+    } else {
+      const restaurant = responseRestaurant.restaurants;
+      container.innerHTML = "";
+      restaurant.forEach((restaurant) => {
+        if (counter < 8) {
+          container.innerHTML += cardTemplate(restaurant);
+        }
+        counter++;
+      });
+      FavoriteIconInitiator.init();
+    }
   },
 };
 

@@ -15,25 +15,26 @@ const Detail = {
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const restaurant = await RestaurantData.detailRestaurant(url.id);
+    const restaurantData = await RestaurantData.detailRestaurant(url.id);
     const restaurantContainer = document.querySelector(".detail-content");
-    restaurantContainer.innerHTML = restaurantDetailTemplate(
-      restaurant.restaurant
-    );
-    const restaurantData = restaurant.restaurant;
-    FavButtonInitiator.init({
-      favButtonContainer: document.querySelector(".favorite-detail"),
-      restaurant: {
-        id: restaurantData.id,
-        name: restaurantData.name,
-        city: restaurantData.city,
-        rating: restaurantData.rating,
-        pictureId: restaurantData.pictureId,
-        description: restaurantData.description,
-      },
-    });
+    if (restaurantData.error) {
+      restaurantContainer.innerHTML = `<error-elm></error-elm>`;
+    } else {
+      restaurantContainer.innerHTML = restaurantDetailTemplate(restaurantData);
+      FavButtonInitiator.init({
+        favButtonContainer: document.querySelector(".favorite-detail"),
+        restaurant: {
+          id: restaurantData.id,
+          name: restaurantData.name,
+          city: restaurantData.city,
+          rating: restaurantData.rating,
+          pictureId: restaurantData.pictureId,
+          description: restaurantData.description,
+        },
+      });
 
-    this.handleReview(restaurantData.id);
+      this.handleReview(restaurantData.id);
+    }
   },
 
   handleReview(id) {

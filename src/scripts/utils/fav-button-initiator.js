@@ -1,4 +1,5 @@
 import FavoriteRestaurantDb from "../data/favoriteRestaurant-source";
+import CONFIG from "../global/config";
 import {
   favoriteButtonTemplate,
   favoritedButtonTemplate,
@@ -16,14 +17,14 @@ const FavButtonInitiator = {
   async _renderButton() {
     const { id } = this._restaurant;
 
-    if (await this._isMoviesExist(id)) {
+    if (await this._isRestaurantsExist(id)) {
       this._renderLiked();
     } else {
       this._renderLike();
     }
   },
 
-  async _isMoviesExist(id) {
+  async _isRestaurantsExist(id) {
     const restaurant = await FavoriteRestaurantDb.getRestaurant(id);
     return !restaurant;
   },
@@ -33,7 +34,7 @@ const FavButtonInitiator = {
 
     const favButton = document.querySelector(".favorite");
     favButton.addEventListener("click", async () => {
-      await FavoriteRestaurantDb.putMovie(this._restaurant);
+      await FavoriteRestaurantDb.putRestaurant(this._restaurant);
       this._renderButton();
       NotificationHelper.sendNotification({
         title: `Add to Your Favorite Restaurant`,

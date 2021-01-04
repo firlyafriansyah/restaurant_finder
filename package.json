@@ -24,11 +24,12 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "webpack-merge": "^5.7.2",
-    "html-webpack-plugin": "^4.5.0",
     "copy-webpack-plugin": "^6.0.2",
+    "html-webpack-plugin": "^4.5.0",
     "idb": "^5.0.8",
+    "material-design-icons": "^3.0.1",
     "regenerator-runtime": "^0.13.7",
-    "serviceworker-webpack-plugin": "^1.0.1"
+    "serviceworker-webpack-plugin": "^1.0.1",
+    "webpack-merge": "^5.7.2"
   }
 }

@@ -1,4 +1,4 @@
-const { default: CONFIG } = require('../global/config');
+import CONFIG from '../global/config';
 
 const CacheHelper = {
   async appShell(request) {

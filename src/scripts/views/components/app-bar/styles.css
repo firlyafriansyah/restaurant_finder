@@ -53,6 +53,12 @@
   padding: 20px;
 }
 
+@media screen and (max-width: 400px) {
+  .app-bar__brand h1 {
+    font-size: 26px;
+  }
+}
+
 @media screen and (min-width: 800px) {
   .app-bar {
     grid-template-columns: 1fr auto auto;

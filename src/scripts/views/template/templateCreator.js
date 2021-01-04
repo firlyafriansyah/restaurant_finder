@@ -3,7 +3,7 @@ import detailInitiator from '../../utils/detail-initiator';
 
 const cardTemplate = (restaurant) => `
   <div class="card" >
-    <img class="card_image" src="${restaurant.pictureId}" alt="${restaurant.name}">
+    <img class="card_image" src="${restaurant.pictureId}" alt="${restaurant.name}" crossorigin="anonymous">
     <div class="background-favorite"></div>
     <div class="favorite-wrapper" id="${restaurant.id}">
       <span class="material-icons">favorite_border</span>

@@ -19,6 +19,7 @@ class AppBar extends HTMLElement {
             <li><a href="#/home">Home</a></li>
             <li><a href="#/list-restaurant">List Restaurant</a></li>
             <li><a href="#/your-favorite">Your Favorite</a></li>
+            <li><a href="https://www.linkedin.com/in/firly-afriansyah-139998192" target="_blank" rel="noreferrer">About Us</a></li>
           </ul>
         </nav>    
       </header>

@@ -14,7 +14,6 @@
 .app-bar__brand {
   display: flex;
   align-items: center;
-  font-family: "Cookie", cursive;
   font-size: 18px;
 }
 

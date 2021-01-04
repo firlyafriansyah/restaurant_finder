@@ -1,7 +1,7 @@
-import { cardTemplate } from "../../template/templateCreator";
-import "./styles.css";
-import FavoriteRestaurantDb from "../../../data/favoriteRestaurant-source";
-import FavoriteIconInitiator from "../../../utils/favoriteIcon-initiator";
+import { cardTemplate } from '../../template/templateCreator';
+import './styles.css';
+import FavoriteRestaurantDb from '../../../data/favoriteRestaurant-source';
+import FavoriteIconInitiator from '../../../utils/favoriteIcon-initiator';
 
 const YourFavorite = {
   async render() {
@@ -14,12 +14,12 @@ const YourFavorite = {
 
   async afterRender() {
     const restaurant = await FavoriteRestaurantDb.getAllRestaurant();
-    const container = document.querySelector(".card_wrapper");
+    const container = document.querySelector('.card_wrapper');
     if (restaurant.length <= 0) {
-      container.innerHTML = `<div class="favorite-empty"><h2>Anda belum mempunyai Restaurant Favorite</h2></div>`;
+      container.innerHTML = '<div class="favorite-empty"><h2>Anda belum mempunyai Restaurant Favorite</h2></div>';
     }
-    restaurant.forEach((restaurant) => {
-      container.innerHTML += cardTemplate(restaurant);
+    restaurant.forEach((resto) => {
+      container.innerHTML += cardTemplate(resto);
     });
 
     FavoriteIconInitiator.init();

@@ -1,5 +1,5 @@
-import FavoriteRestaurantDb from "../data/favoriteRestaurant-source";
-import { favoritedIconTamplate } from "../views/template/templateCreator";
+import FavoriteRestaurantDb from '../data/favoriteRestaurant-source';
+import { favoritedIconTamplate } from '../views/template/templateCreator';
 
 const FavoriteIconInitiator = {
   async init() {

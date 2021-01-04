@@ -1,4 +1,4 @@
-import "./styles.css";
+import './styles.css';
 
 class AppBar extends HTMLElement {
   connectedCallback() {
@@ -26,5 +26,5 @@ class AppBar extends HTMLElement {
   }
 }
 
-customElements.define("app-bar", AppBar);
+customElements.define('app-bar', AppBar);
 export default AppBar;

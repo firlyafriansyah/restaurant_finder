@@ -1,4 +1,4 @@
-import "./styles.css";
+import './styles.css';
 
 class Footer extends HTMLElement {
   connectedCallback() {
@@ -19,5 +19,5 @@ class Footer extends HTMLElement {
   }
 }
 
-customElements.define("foot-bar", Footer);
+customElements.define('foot-bar', Footer);
 export default Footer;

@@ -1,4 +1,4 @@
-import "./styles.css";
+import './styles.css';
 
 class Intro extends HTMLElement {
   connectedCallback() {
@@ -17,5 +17,5 @@ class Intro extends HTMLElement {
   }
 }
 
-customElements.define("intro-elm", Intro);
+customElements.define('intro-elm', Intro);
 export default Intro;

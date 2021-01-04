@@ -1,7 +1,7 @@
-import RestaurantData from "../../../data/restaurant-source";
-import FavoriteIconInitiator from "../../../utils/favoriteIcon-initiator";
-import { cardTemplate } from "../../template/templateCreator";
-import "./styles.css";
+import RestaurantData from '../../../data/restaurant-source';
+import FavoriteIconInitiator from '../../../utils/favoriteIcon-initiator';
+import { cardTemplate } from '../../template/templateCreator';
+import './styles.css';
 
 const Home = {
   async render() {
@@ -22,18 +22,18 @@ const Home = {
 
   async afterRender() {
     let counter = 0;
-    const container = document.querySelector(".card_wrapper");
+    const container = document.querySelector('.card_wrapper');
     const responseRestaurant = await RestaurantData.bestRestaurant();
     if (responseRestaurant.error) {
-      container.innerHTML = `<error-elm></error-elm>`;
+      container.innerHTML = '<error-elm></error-elm>';
     } else {
       const restaurant = responseRestaurant.restaurants;
-      container.innerHTML = "";
-      restaurant.forEach((restaurant) => {
+      container.innerHTML = '';
+      restaurant.forEach((resto) => {
         if (counter < 8) {
-          container.innerHTML += cardTemplate(restaurant);
+          container.innerHTML += cardTemplate(resto);
         }
-        counter++;
+        counter += 1;
       });
       FavoriteIconInitiator.init();
     }

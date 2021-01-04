@@ -1,4 +1,4 @@
-import "./styles.css";
+import './styles.css';
 
 class Loader extends HTMLElement {
   connectedCallback() {
@@ -15,5 +15,5 @@ class Loader extends HTMLElement {
   }
 }
 
-customElements.define("loader-elm", Loader);
+customElements.define('loader-elm', Loader);
 export default Loader;

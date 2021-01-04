@@ -1,4 +1,5 @@
-import detailInitiator from "../../utils/detail-initiator";
+// eslint-disable-next-line import/no-cycle
+import detailInitiator from '../../utils/detail-initiator';
 
 const cardTemplate = (restaurant) => `
   <div class="card" >
@@ -28,15 +29,11 @@ const cardTemplate = (restaurant) => `
 const restaurantDetailTemplate = (restaurant) => `
   <div class="gap"></div>
   <div class="detail-wrapper">
-    <div class="restaurant-identity" style="background-image: url('${
-      restaurant.pictureId
-    }')">
+    <div class="restaurant-identity" style="background-image: url('${restaurant.pictureId}')">
       
       <div class="restaurant-name_wrapper">
         <h1 class="restaurant-name" tabindex="0">${restaurant.name}</h1>
-        <p class="restaurant-category" tabindex="0">${detailInitiator.categoryInitiator(
-          restaurant
-        )}</p>
+        <p class="restaurant-category" tabindex="0">${detailInitiator.categoryInitiator(restaurant)}</p>
       </div>
       <div class="location-wrapper" >
         <span class="material-icons">location_on</span>
@@ -59,17 +56,11 @@ const restaurantDetailTemplate = (restaurant) => `
     <div class="restaurant-menu">
       <div class="foods-menu">
         <h1 class="foods" tabindex="0">.Foods</h1>
-        ${detailInitiator.menuInitiator({
-          restaurant: restaurant,
-          menuType: "foods",
-        })}
+        ${detailInitiator.menuInitiator({ restaurant, menuType: 'foods' })}
       </div>
       <div class="drinks-menu" >
         <h1 class="drinks" tabindex="0">.Drinks</h1>
-        ${detailInitiator.menuInitiator({
-          restaurant: restaurant,
-          menuType: "drink",
-        })}
+        ${detailInitiator.menuInitiator({ restaurant, menuType: 'drink' })}
       </div>
     </div>
     <div class="reviews">
@@ -80,6 +71,7 @@ const restaurantDetailTemplate = (restaurant) => `
     </div>
     <div class="add-review">
       <h1 class="review-title" tabindex="0">Add Your Review</h1>
+      <alert-elm></alert-elm>
       <form>
         <label for="name" class="label">Nama :</label>
         <input type="text" id="name" class="input-name input" placeholder="Masukan Nama Kamu..." />
@@ -103,8 +95,7 @@ const favoritedButtonTemplate = () => `
   </button>
 `;
 
-const favoritedIconTamplate = () =>
-  `<span class="material-icons">favorite</span>`;
+const favoritedIconTamplate = () => '<span class="material-icons">favorite</span>';
 
 const menuListTemplate = (menu) => `
   <div class="foods-list">

@@ -1,4 +1,4 @@
-import "./styles.css";
+import './styles.css';
 
 class Hero extends HTMLElement {
   connectedCallback() {
@@ -17,5 +17,5 @@ class Hero extends HTMLElement {
   }
 }
 
-customElements.define("hero-elm", Hero);
+customElements.define('hero-elm', Hero);
 export default Hero;

@@ -1,43 +1,44 @@
-import CONFIG from "../global/config";
+import CONFIG from '../global/config';
 
 const addReviewInitiator = {
   init({ dataReview }) {
     this._dataReview = dataReview;
 
-    this._postDataReview();
+    this.postDataReview();
   },
 
-  async _postDataReview() {
-    if (this._checkEmptyField(this._dataReview)) {
+  async postDataReview() {
+    if (this.checkEmptyField(this._dataReview)) {
       const fetchResponse = await fetch(
         `${CONFIG.BASE_URL}review`,
-        this._optionsForPostdata(this._dataReview)
+        this.optionsForPostdata(this._dataReview),
       );
       const response = await fetchResponse.json();
-      this._checkPostResponse(response);
+      this.checkPostResponse(response);
     }
   },
 
-  _checkPostResponse(response) {
+  checkPostResponse(response) {
+    const container = document.querySelector('.alert-wrapper');
     if (!response.error) {
       window.location.reload();
     } else {
-      alert("Terjadi kesalahan silahkan ulangi kembali!");
+      container.style.display = 'block';
     }
   },
 
-  _optionsForPostdata(data) {
+  optionsForPostdata(data) {
     return {
       method: CONFIG.POST_METHOD,
       headers: {
-        "X-Auth-Token": CONFIG.X_AUTH_TOKEN,
-        "Content-Type": CONFIG.CONTENT_TYPE,
+        'X-Auth-Token': CONFIG.X_AUTH_TOKEN,
+        'Content-Type': CONFIG.CONTENT_TYPE,
       },
-      body: this._bodyForPostdata(data),
+      body: this.bodyForPostdata(data),
     };
   },
 
-  _bodyForPostdata(dataReview) {
+  bodyForPostdata(dataReview) {
     const data = {
       id: dataReview.id,
       name: dataReview.name,
@@ -46,16 +47,19 @@ const addReviewInitiator = {
     return JSON.stringify(data);
   },
 
-  _checkEmptyField(data) {
-    if (data.name === "") {
-      alert("Kolom nama kosong!");
-      return false;
-    } else if (data.review === "") {
-      alert("Kolom review kosong!");
-      return false;
+  checkEmptyField(data) {
+    let result = true;
+    const container = document.querySelector('.alert-wrapper');
+    if (data.name === '') {
+      container.style.display = 'block';
+      result = false;
+    } else if (data.review === '') {
+      container.style.display = 'block';
+      result = false;
     } else {
-      return true;
+      result = true;
     }
+    return result;
   },
 };
 

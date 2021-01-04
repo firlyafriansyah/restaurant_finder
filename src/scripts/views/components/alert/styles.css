@@ -1,0 +1,11 @@
+.alert-wrapper {
+  background-color: rgb(230, 90, 90);
+  padding: 5px;
+  border-radius: 5px;
+  display: none;
+}
+
+.alert-body {
+  color: white;
+  text-align: center;
+}

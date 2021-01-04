@@ -1,25 +1,23 @@
-import {
-  cardReviewTemplate,
-  menuListTemplate,
-} from "../views/template/templateCreator";
+// eslint-disable-next-line import/no-cycle
+import { menuListTemplate, cardReviewTemplate } from '../views/template/templateCreator';
 
 const detailInitiator = {
   categoryInitiator(restaurant) {
-    let name = [];
+    const name = [];
     restaurant.categories.forEach((category) => {
       name.push(category.name);
     });
-    return `${name.join(" | ")} Restaurant`;
+    return `${name.join(' | ')} Restaurant`;
   },
 
   menuInitiator({ restaurant, menuType }) {
     let menus;
-    let menuElements = "";
+    let menuElements = '';
 
-    if (menuType === "foods") {
-      menus = this._menuFoodsIterator(restaurant);
+    if (menuType === 'foods') {
+      menus = this.menuFoodsIterator(restaurant);
     } else {
-      menus = this._menuDrinksIterator(restaurant);
+      menus = this.menuDrinksIterator(restaurant);
     }
 
     menus.forEach((menu) => {
@@ -30,7 +28,7 @@ const detailInitiator = {
 
   reviewsInitiator(restaurant) {
     const reviews = restaurant.customerReviews;
-    let reviewsElement = "";
+    let reviewsElement = '';
 
     reviews.forEach((review) => {
       reviewsElement += cardReviewTemplate(review);
@@ -39,8 +37,8 @@ const detailInitiator = {
     return reviewsElement;
   },
 
-  _menuFoodsIterator(restaurant) {
-    let foods = [];
+  menuFoodsIterator(restaurant) {
+    const foods = [];
 
     restaurant.menus.foods.forEach((food) => {
       foods.push(food.name);
@@ -48,8 +46,8 @@ const detailInitiator = {
     return foods;
   },
 
-  _menuDrinksIterator(restaurant) {
-    let drinks = [];
+  menuDrinksIterator(restaurant) {
+    const drinks = [];
 
     restaurant.menus.drinks.forEach((drink) => {
       drinks.push(drink.name);

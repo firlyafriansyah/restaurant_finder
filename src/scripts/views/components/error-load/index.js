@@ -1,4 +1,4 @@
-import "./styles.css";
+import './styles.css';
 
 class Error extends HTMLElement {
   connectedCallback() {
@@ -19,5 +19,5 @@ class Error extends HTMLElement {
   }
 }
 
-customElements.define("error-elm", Error);
+customElements.define('error-elm', Error);
 export default Error;

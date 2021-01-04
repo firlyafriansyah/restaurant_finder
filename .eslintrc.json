@@ -11,7 +11,7 @@
         "ecmaVersion": 12
     },
     "rules": {
-        "quotes": 0,
-        "devDependencies": false
+        "no-underscore-dangle": [2, { "allowAfterThis": true }],
+        "no-restricted-globals": ["error", "event", "fdescribe"]
     }
 }
